@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Metadata -->
+<head>
+  <meta charset="utf-8">
+  
+  <!-- Title -->
+  <title>Project Team #SBN5: Distribution of SBN Members, DS 4200 S20</title>
+  
+  <!-- CSS Styling -->
+  <link rel="stylesheet" href="style.css">
+ 
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="manifest" href="favicons/site.webmanifest">
+  <link rel="shortcut icon" href="favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<!-- Main page content -->
+<body>
+
+  <!-- Update this with your GitHub repo URL -->
+  <span id="forkongithub"><a href="https://github.com/NEU-DS-4200-S20/s-l-project-sbn5">Fork me on GitHub</a></span>
+  
+  <!-- Your writeup goes here -->
+  <div class = "content-column">
+  
+    <h1>Project Team #SBN5: Distribution of SBN Members: DS 4200 S20</h1>
+    
+    <p><strong>Megha Rao</strong></p>
+    
+    <p>Service-Learning Course Project as part of <a href="https://canvas.instructure.com/courses/1781714">DS 4200: Information Presentation and Visualization</a>, taught by <a href="https://www.eecs.tufts.edu/~dcashm01/">Prof. Dylan Cashman</a>, <a href="https://visualization.khoury.northeastern.edu/">Data Visualization @ Khoury</a>, <a href="https://www.khoury.northeastern.edu/">Northeastern University</a>.</p>
+    
+    
+    <h1>Motivation</h1>
+    
+    <p>
+      SBN's core missions is to build a community that can support a culture of sustainability and local food. 
+      There are many organizations that care about local food, but it can be difficult for them to know that they 
+      have many other similar-minded organizations nearby.
+    </p>
+
+    <p>
+      SBN has a member directory containing information about all buyers,
+      vendors, and other organizations.  They wanted to build a 
+      visualization that will go into marketing materials and 
+      on their website to communicate the scope of their work 
+      and to connect members of the local food community.
+    </p>
+    
+    <p>SBN's existing database was not a pretty sight, and they did not 
+      find it visually appealing enough to display on their website. 
+      They wanted a visualization that would target business who were 
+      interested in joining the network and seeing who else is involved.
+       What they were specifically looking for was a list + visualization 
+       to represent all the existing businesses in the network.
+    </p>
+
+    
+    <h1>Visualization</h1>
+    
+    <p>How to use:</p>
+    <ul>
+      <li>
+        <p>Scroll to enable zoom functionality.</p>
+      </li>
+      <li>
+        <p>
+          Highlight the cities on the map by brushing to see the highlighted.
+        </p>
+      </li>
+      <li>
+        <p>
+        Linking is not an available feature at this time. 
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Your visualization here -->
+  <div class="vis-holder">
+    <svg id="map-container"
+      preserveAspectRatio="xMidYMid meet" 
+      class="marks" 
+      viewbox = "0 0 950 500">
+    </svg>
+    <div></div>
+    <div class="table-holder" id="table">
+    </div>
+  </div>
+
+  
+  
+  <!-- Your writeup goes here -->
+  <div class = "content-column">
+
+    <h1>Demo Video</h1>
+        
+    <video controls width="100%">
+      <source src="images/ds4200.mp4" type="video/mp4">
+    </video>
+
+    <h1>Visualization explanation</h1>
+    
+
+    <p>One of SBN's core missions is to build a community that can support a culture of sustainability and shopping local. 
+      To do this, SBN has a member directory containing information about all buyers, vendors, and other organizations, 
+      but they do not have an easy way to look all of their members, especially in regards to their specialty and location.</p>
+
+    <p>To accomodate towards SBNs expectation, for our project, we decided to create a visualization that allows viewers to 
+      where members are located and what the products/services offered are.  </p>
+      <p>For design justifications please take a look at our Design Process section.</p>
+      <h3>Final visualization screenshot:</h3>
+      <p>
+        For our final visualization we have a table and a map. The full table is not shown here due to limited space.
+      </p>
+      <img src = "images/finalVis.png" height =450 width = 600>
+      <h3>UI Walkthrough:</h3>
+      <ul>
+        <li>
+          <p>Our map allows for interactability! Simply highlight the cities on the map by clicking and dragging. Move the box around to select different cities at a time. </p>
+          <img src= "images/selection.gif"></li>
+          <li><p>Zoom in and out to see the city plots more clearly. This can be done by scrolling on the map.</p>
+            <img src="images/zoom.gif">
+        </li>
+      </ul>
+    
+    
+
+    <h1>Data Analysis</h1>
+
+      <h3> Summary of Data Provided:</h3>
+        <p>
+          The dataset we were provided initially was not easy to work with. There were a few issues:
+          <li>
+            Data was not presented in a compact manner. Too much clutter.
+          </li>
+          <li>
+            Some columns were unecessary for our visualization.
+          </li>
+          <li>
+            Data was very messy. For example, Product/Services offered were not grouped into categories, making the data not clean and uniform.
+          </li>
+        </p>
+
+        <p> Once we sat down to clean all the data, we were much happier with the results and finalized the specifics of our visualization.</p>
+     
+
+    <h3> Data Types</h3>
+    <p> 
+      For the dataset we were mainly dealing wih Strings. This was completely based on the data we were provided.
+    </p>
+      
+
+    <h3>Data Preprocessing</h3>
+    <p>
+      The dataset we were given had the information for a little over 100 members. 
+      To make the data usable, we had to clean it up and properly categorize each member organization. 
+      This required us to research any gaps in the data (for example, organizations that did not have an 
+      address/location in the dataset), as well as to categorize each member based on what they sell or 
+      are focused on (catering, beverages, consulting, green energy, etc.)
+    </p>
+
+    <h1>Task Analysis</h1>
+
+    <h3>Task table</h3>
+    <table>
+      <tr>
+        <th>
+          Index
+        </th>
+        <th>
+          "Domain" Task
+        </th>
+        <th>
+          Analytical Task
+        </th>
+        <th>
+          Search Task
+        </th>
+        <th>
+          Analyze Task
+        </th>
+      </tr>
+      <tr>
+        <th>
+          1. 
+        </th>
+        <th>
+          Seeing the trend of how members have grown consecutively over the years.
+        </th>
+        <th>
+          Summarize
+        </th>
+        <th>
+          Lookup
+        </th>
+        <th>
+          Discover
+        </th>
+      </tr>
+      <tr>
+        <th>
+          2.
+        </th>
+        <th>
+          Analyzing the density of dots on a geographical map will represent the growing number of members over the years
+        </th>
+        <th>
+          Compare
+        </th>
+        <th>
+          Lookup
+        </th>
+        <th>
+          Enjoy
+        </th>
+      </tr>
+    </table>
+
+    <h3>Summary of task table.</h3>
+    <p> Our original task table had a lot more points, but we feel like in our final visualizations
+      we definitely hit these two tasks from our original plans.
+
+      Although we couldn't show the trend of growing members over the years due to data limitation, the spread
+      and density of dots across the map represent the growing number of members over the years
+    </p>
+
+    <p>
+      Our goal after making this task table was to represent the tasks in a nice, easy to read enough manner. 
+      The problems we faced along the way were limitation on available data, coding in D3 experience and time management.
+    </p>
+
+    <h1>Design Process</h1>
+    
+    <p><b>Original Idea:</b></p>
+    <p>
+      Before we had access to any data, we wanted to make a visualizations of a map that showed the increasing number 
+      of businesses each year as plots points on the map. Given below is an example of the visualization we wanted to base it off of.
+    </p>
+    <img src="images/mapOverTime.gif">
+
+    <p>With time, we realized this would not work for the following reasons:
+      <ul>
+        <li>The dataset provided did not show the month/year the business joined SBN, to show the progress over time.</li>
+        <li>We needed to establish brushing and linking as per project requirements</li>
+      </ul>
+    </p>
+
+    <p>So, this was scratched, and we went back to the drawing board and came up with the following design.</p>
+
+
+    <p> <b>Final "interactive" sketch made on Tableau: </b> </p>
+    <img src = "images/ogSketch.png" height = "450" width ="650">
+
+    <p>Our original idea for the map was to not only brush and link between a map and a table, but also allow for more interactability
+      for the user by adding a filter to select by product or service as seen in the screenshot above. The different products/services would be 
+      distinguished by color.
+
+      However, we faced some issues along the way:
+      <ul>
+        <li>Boston had several different businesses with different products/services. The overlapping colors could be confusing to the eye.</li>
+        <li>There were too many categories under products/services, which meant too many unecessary colors on the map.</li>
+        <li>We didn't know how to code that in D3!</li>
+
+        <li>Usability testing proved to be confusing for the teams that tested our visualization. Listed below is their specific feedback for the sketch at the time.</li>
+        <ul>
+          <li>Ensure that zoom feature is enabled to make sure there is no overlap.</li>
+          <li>Get rid of outliers like Ohio and New Jersey, since they are not super relevant to your visualization.</li>
+          <li>If you do keep the differentiation of products or services by color, make sure to use primary colors since many of the colors look similar and can be confusing.</li>
+          <li>Possibly get rid of filter feature completely?</li>
+        </ul>
+        
+      </ul>
+
+      So, we decided to make the decision to simplify our plan and remove the filter + colors features entirely. 
+
+      This resulted in our final visualization, that you can see in our visualization section!
+
+    </p>
+
+
+    <h1>Conclusion</h1>
+
+    <p>In conclusion, our visualization represents the existing businesses 
+      registered with SBN through a map + table. 
+      If we had more time, we would definitely implement linking. </p>
+      <p>
+      In the future, interesting features to add would be:
+      <ul>
+        <li>
+          To add a tooltip. This way, the cities would be more clearly defined, allowing for clarity and transparency for the user.
+        </li>
+        <li>
+          Implement a filter. This would allow the user to filter out cities that are unecessary for their viewing.
+        </li>
+      </ul> 
+    </p>
+
+    
+    <h1>Acknowledgments</h1>
+    
+    <ul>
+      <li><a href="https://d3js.org/">D3: Data-Driven Documents</a> by Mike Bostock.</li>
+      <li><a href="https://codepo8.github.io/css-fork-on-github-ribbon/#">Pure CSS responsive "Fork me on GitHub" ribbon</a> by Chris Heilmann.</li>
+      <li><a href = "https://github.com/lvonlanthen/data-map-d3"> Zooming on a visualization tutorial</a> by Lukas Vonlanthen.</li>
+
+      <li>Existing code from previous assignments 
+        <ul>
+          <li><a href = "https://github.com/NEU-DS-4200-S20-Staff/in-class-programming-d3-tutorial">In-class programming: D3 Map Brushing and Linking Tutorial</a></li>
+          <li><a href = "https://github.com/NEU-DS-4200-S20/assignment-brushing-and-linking-in-d3-raomegha">Brushing and Linking in D3 </a> - Assignment 4</li>
+        </ul>
+      </li>
+      <li>Aditeya's office hours code</li>
+    </ul>
+  </div>
+  
+  <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+  <script src="lib/d3.v4/d3.v4.js"></script>
+  <script src="js/visualization.js"></script>
+  <script src="js/table.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+
+</body>
+</html>
