@@ -1,6 +1,6 @@
 ## The GitHub Pages Website
 
-https://neu-ds-4200-s20.github.io/s-l-project-sbn5/
+https://raomegha.github.io/Distribution-of-SBN-Members-DS-4200-S20/
 
 ## Summary 
 
